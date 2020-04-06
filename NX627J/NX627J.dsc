@@ -141,8 +141,8 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdEmuVariableNvModeEnable|TRUE
 
   gNX627JTokenSpaceGuid.PcdMipiFrameBufferAddress|0x9d400000
-  gNX627JTokenSpaceGuid.PcdMipiFrameBufferWidth|1440
-  gNX627JTokenSpaceGuid.PcdMipiFrameBufferHeight|2960
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferHeight|2340
 
   gEfiMdeModulePkgTokenSpaceGuid.PcdAcpiExposedTableVersions|0x20
 
