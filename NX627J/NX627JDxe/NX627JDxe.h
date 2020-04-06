@@ -12,7 +12,7 @@
 *
 **/
 
-#ifndef __PIXEL3XLDXE_H__
-#define __PIXEL3XLDXE_H__
+#ifndef __NX627JDXE_H__
+#define __NX627JDXE_H__
 
-#endif /* __PIXEL3XLDXE_H__ */
+#endif /* __NX627JDXE_H__ */

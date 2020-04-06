@@ -24,5 +24,5 @@ clean-all:
 
 save:
 	@echo "save result"
-	@gzip -c < workspace/Build/Pixel3XL/DEBUG_GCC5/FV/PIXEL3XL_UEFI.fd >uefi.img
+	@gzip -c < workspace/Build/NX627J/DEBUG_GCC5/FV/NX627J_UEFI.fd >uefi.img
 	@cat boot-dtb.dtb >> uefi.img

@@ -16,7 +16,7 @@
 #
 ################################################################################
 [Defines]
-  PLATFORM_NAME                  = Pixel3XL
+  PLATFORM_NAME                  = NX627J
   PLATFORM_GUID                  = 28f1a3bf-193a-47e3-a7b9-5a435eaab2ee
   PLATFORM_VERSION               = 0.1
   DSC_SPECIFICATION              = 0x00010019
@@ -24,13 +24,13 @@
   SUPPORTED_ARCHITECTURES        = AARCH64
   BUILD_TARGETS                  = DEBUG|RELEASE
   SKUID_IDENTIFIER               = DEFAULT
-  FLASH_DEFINITION               = Pixel3XL/Pixel3XL.fdf
+  FLASH_DEFINITION               = NX627J/NX627J.fdf
 
-!include Pixel3XL/CommonDsc.dsc.inc
+!include NX627J/CommonDsc.dsc.inc
 
 [LibraryClasses.common]
   ArmLib|ArmPkg/Library/ArmLib/ArmBaseLib.inf
-  ArmPlatformLib|Pixel3XL/Library/Pixel3XLLib/Pixel3XLLib.inf
+  ArmPlatformLib|NX627J/Library/NX627JLib/NX627JLib.inf
 
   CapsuleLib|MdeModulePkg/Library/DxeCapsuleLibNull/DxeCapsuleLibNull.inf
   UefiBootManagerLib|MdeModulePkg/Library/UefiBootManagerLib/UefiBootManagerLib.inf
@@ -43,7 +43,7 @@
   DxeServicesLib|MdePkg/Library/DxeServicesLib/DxeServicesLib.inf
   BootLogoLib|MdeModulePkg/Library/BootLogoLib/BootLogoLib.inf
 
-  SerialPortLib|Pixel3XL/Library/InMemorySerialPortLib/InMemorySerialPortLib.inf
+  SerialPortLib|NX627J/Library/InMemorySerialPortLib/InMemorySerialPortLib.inf
   RealTimeClockLib|EmbeddedPkg/Library/VirtualRealTimeClockLib/VirtualRealTimeClockLib.inf
   TimeBaseLib|EmbeddedPkg/Library/TimeBaseLib/TimeBaseLib.inf
 
@@ -133,9 +133,9 @@
   #
   gEfiMdeModulePkgTokenSpaceGuid.PcdEmuVariableNvModeEnable|TRUE
 
-  gPixel3XLTokenSpaceGuid.PcdMipiFrameBufferAddress|0x9d400000
-  gPixel3XLTokenSpaceGuid.PcdMipiFrameBufferWidth|1440
-  gPixel3XLTokenSpaceGuid.PcdMipiFrameBufferHeight|2960
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferAddress|0x9d400000
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferWidth|1440
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferHeight|2960
 
   gEfiMdeModulePkgTokenSpaceGuid.PcdAcpiExposedTableVersions|0x20
 
@@ -195,8 +195,8 @@
   #
   EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf
 
-  Pixel3XL/Pixel3XLDxe/Pixel3XLDxe.inf
-  Pixel3XL/SimpleFbDxe/SimpleFbDxe.inf
+  NX627J/NX627JDxe/NX627JDxe.inf
+  NX627J/SimpleFbDxe/SimpleFbDxe.inf
 
   #
   # USB Host Support
@@ -233,12 +233,12 @@
   MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
   MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf
   MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf
-  Pixel3XL/AcpiTables/AcpiTables.inf
+  NX627J/AcpiTables/AcpiTables.inf
 
   #
   # SMBIOS Support
   #
-  Pixel3XL/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
+  NX627J/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
   MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
 
   #
