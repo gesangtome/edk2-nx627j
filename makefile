@@ -3,6 +3,7 @@
 #
 
 .PHONY: prebuild build cleanall save
+all: prebuild build save clean
 
 environment:
 	@echo "set environment"
