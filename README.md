@@ -1,6 +1,4 @@
-Attempt to create a minimal EDK2 for Pixel 3 XL.
-
-[![Build Status](https://dev.azure.com/zhuoweizhang/edk2-pixel3/_apis/build/status/Pixel3Dev.edk2-pixel3?branchName=master)](https://dev.azure.com/zhuoweizhang/edk2-pixel3/_build/latest?definitionId=1&branchName=master)
+Attempt to create a minimal EDK2 for nubia Z20 (NX627J)
 
 ## Status
 
@@ -9,7 +7,7 @@ Can partially boot the Fedora 29 aarch64 kernel: there's no initrd, so the kerne
 Since there's no internal storage support yet, use the addlinux branch to embed a Linux kernel in the UEFI firmware.
 
 ## Building
-Tested on Ubuntu 18.04.
+Tested on Fedora 31
 
 First, clone EDK2.
 
@@ -28,10 +26,14 @@ Next, install dependencies:
 ```
 sudo apt install build-essential uuid-dev iasl git nasm python3-distutils gcc-aarch64-linux-gnu
 ```
+Fedora 31 (Workstation Edition):
+```
+sudo dnf install uuid-devel acpica-tools git gcc-aarch64-linux-gnu
+```
 
 Also see [EDK2 website](https://github.com/tianocore/tianocore.github.io/wiki/Using-EDK-II-with-Native-GCC#Install_required_software_from_apt)
 
-Finally, ./build.sh.
+Finally, run `make all`
 
 Then fastboot boot uefi.img.
 
