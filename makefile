@@ -17,8 +17,7 @@ build: environment
 	@echo "start build"
 	@bash build.sh
 
-clean: clean-all
-clean-all:
+clean:
 	@echo "start clean workspace"
 	@make -C ../edk2/BaseTools clean
 	@rm -rf workspace/Build
