@@ -24,6 +24,7 @@
   EmbeddedPkg/EmbeddedPkg.dec
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec
+  NX627J/NX627J.dec
 
 [LibraryClasses]
   ArmLib

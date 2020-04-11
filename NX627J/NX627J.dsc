@@ -66,6 +66,9 @@
   # SimpleFbDxe
   FrameBufferBltLib|MdeModulePkg/Library/FrameBufferBltLib/FrameBufferBltLib.inf
 
+  SerialPortLib|NX627J/Library/FrameBufferSerialPortLib/FrameBufferSerialPortLib.inf
+  PlatformBootManagerLib|XiaomiMI6Pkg/Library/PlatformBootManagerLib/PlatformBootManagerLib.inf
+
 [LibraryClasses.common.SEC]
   PrePiLib|EmbeddedPkg/Library/PrePiLib/PrePiLib.inf
   ExtractGuidedSectionLib|EmbeddedPkg/Library/PrePiExtractGuidedSectionLib/PrePiExtractGuidedSectionLib.inf
