@@ -24,11 +24,11 @@ Next, install dependencies:
 18.04:
 
 ```
-sudo apt install build-essential uuid-dev iasl git nasm python3-distutils gcc-aarch64-linux-gnu
+sudo apt install build-essential uuid-dev iasl git nasm python3-distutils gcc-aarch64-linux-gnu abootimg
 ```
 Fedora 31 (Workstation Edition):
 ```
-sudo dnf install uuid-devel acpica-tools git gcc-aarch64-linux-gnu
+sudo dnf install uuid-devel acpica-tools git gcc-aarch64-linux-gnu abootimg
 ```
 
 Also see [EDK2 website](https://github.com/tianocore/tianocore.github.io/wiki/Using-EDK-II-with-Native-GCC#Install_required_software_from_apt)
