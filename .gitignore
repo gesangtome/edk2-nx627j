@@ -2,6 +2,7 @@ output/*.img
 output/Build
 output/*.dtb
 output/HOSTDTC
+nubia-Z20_edk2-uefiboot.img
 *.patch
 *.*~
 *.rej

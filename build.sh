@@ -20,6 +20,10 @@ initialization() {
   export DTC=$PWD/sources/dtc/dtc
   export HOSTDTC=$WORKSPACE/HOSTDTC
   export UEFIFD=$WORKSPACE/Build/NX627J/DEBUG_GCC5/FV/NX627J_UEFI.fd
+  export KERNEL_IMAGES=$WORKSPACE/nubia_Z20-pkg-aarch64.img
+  export RAMDISK=$WORKSPACE/../androidboot/ramdisk
+  export KERNEL_CONFIG=$WORKSPACE/../androidboot/android.cfg
+  export UEFI_IMAGE=$WORKSPACE/../nubia-Z20_edk2-uefiboot.img
   . ../$EDK2/edksetup.sh
 }
 
@@ -39,13 +43,17 @@ make_uefi_image() {
 }
 
 make_fake_kernel() {
-  gzip -c < $UEFIFD > $WORKSPACE/nubia-NX627J-aarch64.img
+  gzip -c < $UEFIFD > $KERNEL_IMAGES
 }
 
 appenddtb() {
   for DTB in $WORKSPACE/*.dtb; do
-    cat $DTB >> $WORKSPACE/nubia-NX627J-aarch64.img
+    cat $DTB >> $KERNEL_IMAGES
   done
+}
+
+androidboot() {
+  $(which "abootimg") --create $UEFI_IMAGE -k $KERNEL_IMAGES -r $RAMDISK -f $KERNEL_CONFIG
 }
 
 clean() {
