@@ -22,8 +22,12 @@ build: environment
 	@bash build.sh
 
 clean:
-	@echo "start clean workspace"
+	@echo "Start cleaning 'BaseTools'"
 	@make -C ../edk2/BaseTools clean
+	@echo "Start cleaning 'dtc'"
+	@make -C dtc clean
+	@rm -rf dtc_binary
+	@echo "Start cleaning 'workspace'"
 	@rm -rf workspace/Build
 
 save:
