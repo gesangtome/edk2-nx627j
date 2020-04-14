@@ -2,8 +2,12 @@
 # Created by 弱弱的胖橘猫丷
 #
 
-.PHONY: prebuild build cleanall save
+.PHONY: prebuild build cleanall save dtc
 all: prebuild build save clean
+
+dtc:
+	@make -C dtc
+	@mv dtc/dtc dtc_binary
 
 environment:
 	@echo "set environment"
@@ -24,5 +28,5 @@ clean:
 
 save:
 	@echo "save result"
-	@gzip -c < workspace/Build/NX627J/DEBUG_GCC5/FV/NX627J_UEFI.fd >uefi.img
+	@gzip -c < workspace/Build/NX627J/DEBUG_GCC5/FV/NX627J_UEFI.fd > uefi.img
 	@cat boot-dtb.dtb >> uefi.img
