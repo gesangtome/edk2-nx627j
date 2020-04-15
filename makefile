@@ -10,15 +10,15 @@ dtc:
 	@mv dtc/dtc dtc_binary
 
 environment:
-	@echo "set environment"
+	@echo "Set environment"
 	@bash common.sh
 
 prebuild: environment
-	@echo "start prebuild"
+	@echo "Start prebuild"
 	@make -C ../edk2/BaseTools
 
 build: environment
-	@echo "start build"
+	@echo "Start build"
 	@bash build.sh
 
 clean:
@@ -30,7 +30,8 @@ clean:
 	@echo "Start cleaning 'workspace'"
 	@rm -rf workspace/Build
 
-save:
-	@echo "save result"
-	@gzip -c < workspace/Build/NX627J/DEBUG_GCC5/FV/NX627J_UEFI.fd > uefi.img
-	@cat boot-dtb.dtb >> uefi.img
+save: dtc
+	@echo "Making fake kernel image"
+	@gzip -c < workspace/Build/NX627J/DEBUG_GCC5/FV/NX627J_UEFI.fd > uefi_image
+	@echo "Append DTB into fake kernel image"
+	@bash make_dts make_dtbs move_dtbs append_dtb
