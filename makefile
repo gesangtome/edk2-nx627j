@@ -29,8 +29,6 @@ clean:
 	@rm -rf dtc_binary
 	@echo "Start cleaning 'workspace'"
 	@rm -rf workspace/Build
-	@rm -rf dts/*.dtb
-	@rm -rf uefi_image
 
 save: dtc
 	@echo "Making fake kernel image"
