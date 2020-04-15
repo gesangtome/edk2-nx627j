@@ -11,7 +11,7 @@ make_dtbs() {
 }
 
 append_dtb() {
-  for file_source in dtbs/*.dtb
+  for file_source in dts/*.dtb
     do
       cat $file_source >> uefi_image
   done 
