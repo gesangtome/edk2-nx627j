@@ -34,6 +34,6 @@ save: dtc
 	@echo "Making fake kernel image"
 	@gzip -c < workspace/Build/NX627J/DEBUG_GCC5/FV/NX627J_UEFI.fd > uefi_image
 	@echo "Append DTB into fake kernel image"
-	@bash make_dts make_dtbs move_dtbs append_dtb
+	@bash make_dts make_dtbs append_dtb
 	@abootimg --create uefi.img -k uefi_image -r ramdisk-null -f android-kernel-image.cfg
 

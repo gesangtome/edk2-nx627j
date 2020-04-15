@@ -3,22 +3,10 @@
 # Created by 弱弱的胖橘猫丷
 #
 
-if [ ! -d dtbs ];
-then
-    mkdir -p dtbs
-fi
-
 make_dtbs() {
-  for dts_sources in boot-dts/*.dts
+  for dts_sources in dts/*.dts
     do
       ./dtc_binary -I dts -O dtb -o $dts_sources.dtb $dts_sources
-  done
-}
-
-move_dtbs() {
-  for dtb_sources in boot-dts/*.dtb
-    do
-      mv $dtb_sources dtbs/
   done
 }
 
