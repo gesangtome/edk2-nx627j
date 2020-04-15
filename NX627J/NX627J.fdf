@@ -105,7 +105,192 @@ READ_LOCK_CAP      = TRUE
 READ_LOCK_STATUS   = TRUE
 
   APRIORI DXE {
+    INF MdeModulePkg/Core/Dxe/DxeMain.inf
+
+    FILE DRIVER = 90a49afd-422f-08ae-9611-e788d3804845 {
+      SECTION DXE_DEPEX = NX627J/Binaries/EnvDxe/EnvDxe.depex
+      SECTION PE32 = NX627J/Binaries/EnvDxe/EnvDxe.efi
+      SECTION UI = "EnvDxe"
+    }
+
     INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
+    INF MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
+    INF MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf
+    INF MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf
+    INF ArmPkg/Drivers/CpuDxe/CpuDxe.inf
+    INF ArmPkg/Drivers/ArmGic/ArmGicDxe.inf
+    INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
+    INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
+
+    FILE DRIVER = 5e0eae60-eaed-4d75-b8bf-edbbaabc3f09 {
+      SECTION PE32 = NX627J/Binaries/SecurityDxe/SecurityDxe.efi
+      SECTION UI = "SecurityDxe"
+    }
+
+    FILE DRIVER = c2f9a4f5-f7b4-43e7-ba99-5ea804cc103a {
+      SECTION PE32 = NX627J/Binaries/ASN1X509Dxe/ASN1X509Dxe.efi
+      SECTION UI = "ASN1X509Dxe"
+    }
+
+    FILE DRIVER = 32c71e68-83a8-46ed-aed1-094e71b12057 {
+      SECTION PE32 = NX627J/Binaries/SecRSADxe/SecRSADxe.efi
+      SECTION UI = "SecRSADxe"
+    }
+
+    FILE DRIVER = f541d663-4a48-40aa-aabf-ff158ccae34c {
+      SECTION DXE_DEPEX = NX627J/Binaries/SmemDxe/SmemDxe.depex
+      SECTION PE32 = NX627J/Binaries/SmemDxe/SmemDxe.efi
+      SECTION UI = "SmemDxe"
+    }
+
+    FILE DRIVER = 8e9bd160-b184-11df-94e2-0800200c9a66 {
+      SECTION DXE_DEPEX = NX627J/Binaries/DALSys/DALSys.depex
+      SECTION PE32 = NX627J/Binaries/DALSys/DALSys.efi
+      SECTION UI = "DALSys"
+    }
+
+    FILE DRIVER = af9763a2-033b-4109-8e17-56a98d380c92 {
+      SECTION DXE_DEPEX = NX627J/Binaries/HWIODxeDriver/HWIODxeDriver.depex
+      SECTION PE32 = NX627J/Binaries/HWIODxeDriver/HWIODxeDriver.efi
+      SECTION UI = "HWIODxeDriver"
+    }
+
+    FILE DRIVER = 10e193df-9966-44e7-b17c-59dd831e20fc {
+      SECTION DXE_DEPEX = NX627J/Binaries/ChipInfo/ChipInfo.depex
+      SECTION PE32 = NX627J/Binaries/ChipInfo/ChipInfo.efi
+      SECTION UI = "ChipInfo"
+    }
+
+    FILE DRIVER = b105211b-bbbd-4add-a3b0-d1cf4a52154c {
+      SECTION DXE_DEPEX = NX627J/Binaries/PlatformInfoDxeDriver/PlatformInfoDxeDriver.depex
+      SECTION PE32 = NX627J/Binaries/PlatformInfoDxeDriver/PlatformInfoDxeDriver.efi
+      SECTION UI = "PlatformInfoDxeDriver"
+    }
+
+    INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
+
+    FILE DRIVER = 7942a7eb-b7d5-4e2e-b908-831e4de55b58 {
+      SECTION DXE_DEPEX = NX627J/Binaries/GlinkDxe/GlinkDxe.depex
+      SECTION PE32 = NX627J/Binaries/GlinkDxe/GlinkDxe.efi
+      SECTION UI = "GlinkDxe"
+    }
+
+    FILE DRIVER = e43128a8-8692-42b6-8afa-676158578d18 {
+      SECTION DXE_DEPEX = NX627J/Binaries/ULogDxe/ULogDxe.depex
+      SECTION PE32 = NX627J/Binaries/ULogDxe/ULogDxe.efi
+      SECTION UI = "ULogDxe"
+    }
+
+    FILE DRIVER = cb29f4d1-7f37-4692-a416-93e82e219711 {
+      SECTION DXE_DEPEX = NX627J/Binaries/NpaDxe/NpaDxe.depex
+      SECTION PE32 = NX627J/Binaries/NpaDxe/NpaDxe.efi
+      SECTION UI = "NpaDxe"
+    }
+
+    FILE DRIVER = 4db5dea6-5302-4d1a-8a82-677a683b0d29 {
+      SECTION DXE_DEPEX = NX627J/Binaries/ClockDxe/ClockDxe.depex
+      SECTION PE32 = NX627J/Binaries/ClockDxe/ClockDxe.efi
+      SECTION UI = "ClockDxe"
+    }
+
+    INF MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.inf
+    INF MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf
+
+    FILE DRIVER = f10f76db-42c1-533f-34a8-69be24653110 {
+      SECTION DXE_DEPEX = NX627J/Binaries/SdccDxe/SdccDxe.depex
+      SECTION PE32 = NX627J/Binaries/SdccDxe/SdccDxe.efi
+      SECTION UI = "SdccDxe"
+    }
+
+    FILE DRIVER = 0d35cd8e-97ea-4f9a-96af-0f0d89f76567 {
+      SECTION DXE_DEPEX = NX627J/Binaries/UFSDxe/UFSDxe.depex
+      SECTION PE32 = NX627J/Binaries/UFSDxe/UFSDxe.efi
+      SECTION UI = "UFSDxe"
+    }
+
+    INF FatPkg/EnhancedFatDxe/Fat.inf
+    INF MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
+    INF MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf
+
+    FILE DRIVER = b003d837-44cc-b38b-7811-deb5ebbd74d8 {
+      SECTION DXE_DEPEX = NX627J/Binaries/QdssDxe/QdssDxe.depex
+      SECTION PE32 = NX627J/Binaries/QdssDxe/QdssDxe.efi
+      SECTION UI = "QdssDxe"
+    }
+    
+    #temporarily
+    FILE DRIVER = 02b01ad5-7e59-43e8-a6d8-238180613a5a {
+      SECTION DXE_DEPEX = NX627J/Binaries/EmuVariableRuntimeDxe/EmuVariableRuntimeDxe.depex
+      SECTION PE32 = NX627J/Binaries/EmuVariableRuntimeDxe/EmuVariableRuntimeDxe.efi
+      SECTION UI = "EmuVariableRuntimeDxe"
+    }
+
+  INF EmbeddedPkg/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
+  INF MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf
+  INF EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf
+
+  INF MdeModulePkg/Universal/PrintDxe/PrintDxe.inf
+  INF MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
+  INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
+  INF MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
+
+    FILE DRIVER = 8681cc5a-0df6-441e-b4b8-e915c538f067 {
+      SECTION DXE_DEPEX = NX627J/Binaries/DALTLMM/DALTLMM.depex
+      SECTION PE32 = NX627J/Binaries/DALTLMM/DALTLMM.efi
+      SECTION UI = "DALTLMM"
+    }
+
+    FILE DRIVER = 04de8591-d2b3-4077-bbbe-b12070094eb6 {
+      SECTION DXE_DEPEX = NX627J/Binaries/I2C/I2C.depex
+      SECTION PE32 = NX627J/Binaries/I2C/I2C.efi
+      SECTION UI = "I2C"
+    }
+
+    FILE DRIVER = 2a7b4bef-80cd-49e1-b473-374ba4d673fc {
+      SECTION DXE_DEPEX = NX627J/Binaries/SPMI/SPMI.depex
+      SECTION PE32 = NX627J/Binaries/SPMI/SPMI.efi
+      SECTION UI = "SPMI"
+    }
+
+    FILE DRIVER = 7a32bd23-f735-4f57-aa1a-447d2fe3be0d {
+      SECTION DXE_DEPEX = NX627J/Binaries/SPI/SPI.depex
+      SECTION PE32 = NX627J/Binaries/SPI/SPI.efi
+      SECTION UI = "SPI"
+    }
+
+    FILE DRIVER = 5776232e-082d-4b75-9a0e-fe1d13f7a5d9 {
+      SECTION DXE_DEPEX = NX627J/Binaries/PmicDxe/PmicDxe.depex
+      SECTION PE32 = NX627J/Binaries/PmicDxe/PmicDxe.efi
+      SECTION UI = "PmicDxe"
+    }
+
+    FILE DRIVER = 5a5cb8ca-9382-4e0c-b383-77fb517cd9eb {
+      SECTION DXE_DEPEX = NX627J/Binaries/AdcDxe/AdcDxe.depex
+      SECTION PE32 = NX627J/Binaries/AdcDxe/AdcDxe.efi
+      SECTION UI = "AdcDxe"
+    }
+
+    FILE DRIVER = 4bce7f36-428e-4393-99e3-7e0844404dba {
+      SECTION DXE_DEPEX = NX627J/Binaries/QcomChargerDxeLA/QcomChargerDxeLA.depex
+      SECTION PE32 = NX627J/Binaries/QcomChargerDxeLA/QcomChargerDxeLA.efi
+      SECTION UI = "QcomChargerDxeLA"
+    }
+
+    FILE DRIVER = 5bd181db-0487-4f1a-ae73-820e165611b3 {
+      SECTION DXE_DEPEX = NX627J/Binaries/ButtonsDxe/ButtonsDxe.depex
+      SECTION PE32 = NX627J/Binaries/ButtonsDxe/ButtonsDxe.efi
+      SECTION UI = "ButtonsDxe"
+    }
+
+    FILE DRIVER = 3adf8dda-1850-44c5-8c63-bb991849bc6f {
+      SECTION PE32 = NX627J/Binaries/HashDxe/HashDxe.efi
+      SECTION UI = "HashDxe"
+    }
+
+    FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
+      SECTION PE32 = NX627J/Binaries/RngDxe/RngDxe.efi
+      SECTION UI = "RngDxe"
+    }
   }
 
   INF MdeModulePkg/Core/Dxe/DxeMain.inf
@@ -113,8 +298,16 @@ READ_LOCK_STATUS   = TRUE
   #
   # PI DXE Drivers producing Architectural Protocols (EFI Services)
   #
+
   INF ArmPkg/Drivers/CpuDxe/CpuDxe.inf
   INF MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf
+  INF ArmPkg/Drivers/ArmGic/ArmGicDxe.inf
+  INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
+  INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
+
+  INF MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
+  INF MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf
+
   INF MdeModulePkg/Universal/SecurityStubDxe/SecurityStubDxe.inf
   INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
   INF EmbeddedPkg/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
@@ -130,11 +323,6 @@ READ_LOCK_STATUS   = TRUE
   INF MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
   INF MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf
   INF MdeModulePkg/Universal/SerialDxe/SerialDxe.inf
-
-  INF ArmPkg/Drivers/ArmGic/ArmGicDxe.inf
-  INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
-
-  INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
 
   INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
 
@@ -171,14 +359,6 @@ READ_LOCK_STATUS   = TRUE
   #
   INF EmbeddedPkg/Application/AndroidFastboot/AndroidFastbootApp.inf
 
-  #
-  # FAT filesystem + GPT/MBR partitioning
-  #
-  INF MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.inf
-  INF MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf
-  INF FatPkg/EnhancedFatDxe/Fat.inf
-  INF MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
-
   INF MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
 
   INF MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
@@ -189,7 +369,18 @@ READ_LOCK_STATUS   = TRUE
   INF MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
   INF MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf
   INF MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf
-  INF RuleOverride = ACPITABLE NX627J/AcpiTables/AcpiTables.inf
+
+  FILE FREEFORM = 7E374E25-8E01-4FEE-87F2-390C23C606CD {
+	SECTION RAW = NX627J/AcpiTables/sm8150/DBG2.aml
+	SECTION RAW = NX627J/AcpiTables/dsdt.raw
+	SECTION RAW = NX627J/AcpiTables/sm8150/FACS.aml
+	SECTION RAW = NX627J/AcpiTables/sm8150/FADT.aml
+	SECTION RAW = NX627J/AcpiTables/sm8150/GTDT.aml
+	SECTION RAW = NX627J/AcpiTables/sm8150/MADT.aml
+	SECTION RAW = NX627J/AcpiTables/sm8150/MCFG.aml
+	SECTION RAW = NX627J/AcpiTables/sm8150/CSRT.aml
+	SECTION UI = "AcpiTables"
+  }
 
   #
   # SMBIOS Support
@@ -218,13 +409,85 @@ READ_LOCK_STATUS   = TRUE
   INF NX627J/Drivers/LogoDxe/LogoDxe.inf
 
   #
-  # Binary DXE drivers from Lenovo MSM8998
+  # Binaries DXE drivers from nubia SM8150
   #
 
-  FILE DRIVER = 7a32bd23-f735-4f57-aa1a-447d2fe3be0d {
-    SECTION DXE_DEPEX = NX627J/Binaries/SPI/SPI.depex
-    SECTION PE32 = NX627J/Binaries/SPI/SPI.efi
-    SECTION UI = "SPI"
+  FILE DRIVER = 5e0eae60-eaed-4d75-b8bf-edbbaabc3f09 {
+    SECTION PE32 = NX627J/Binaries/SecurityDxe/SecurityDxe.efi
+    SECTION UI = "SecurityDxe"
+  }
+
+  FILE DRIVER = c2f9a4f5-f7b4-43e7-ba99-5ea804cc103a {
+    SECTION PE32 = NX627J/Binaries/ASN1X509Dxe/ASN1X509Dxe.efi
+    SECTION UI = "ASN1X509Dxe"
+  }
+
+  FILE DRIVER = 32c71e68-83a8-46ed-aed1-094e71b12057 {
+    SECTION PE32 = NX627J/Binaries/SecRSADxe/SecRSADxe.efi
+    SECTION UI = "SecRSADxe"
+  }
+
+  FILE DRIVER = f541d663-4a48-40aa-aabf-ff158ccae34c {
+    SECTION DXE_DEPEX = NX627J/Binaries/SmemDxe/SmemDxe.depex
+    SECTION PE32 = NX627J/Binaries/SmemDxe/SmemDxe.efi
+    SECTION UI = "SmemDxe"
+  }
+
+  FILE DRIVER = 8e9bd160-b184-11df-94e2-0800200c9a66 {
+    SECTION DXE_DEPEX = NX627J/Binaries/DALSys/DALSys.depex
+    SECTION PE32 = NX627J/Binaries/DALSys/DALSys.efi
+    SECTION UI = "DALSys"
+  }
+
+  FILE DRIVER = af9763a2-033b-4109-8e17-56a98d380c92 {
+    SECTION DXE_DEPEX = NX627J/Binaries/HWIODxeDriver/HWIODxeDriver.depex
+    SECTION PE32 = NX627J/Binaries/HWIODxeDriver/HWIODxeDriver.efi
+    SECTION UI = "HWIODxeDriver"
+  }
+
+  FILE DRIVER = 10e193df-9966-44e7-b17c-59dd831e20fc {
+    SECTION DXE_DEPEX = NX627J/Binaries/ChipInfo/ChipInfo.depex
+    SECTION PE32 = NX627J/Binaries/ChipInfo/ChipInfo.efi
+    SECTION UI = "ChipInfo"
+  }
+
+  FILE DRIVER = b105211b-bbbd-4add-a3b0-d1cf4a52154c {
+    SECTION DXE_DEPEX = NX627J/Binaries/PlatformInfoDxeDriver/PlatformInfoDxeDriver.depex
+    SECTION PE32 = NX627J/Binaries/PlatformInfoDxeDriver/PlatformInfoDxeDriver.efi
+    SECTION UI = "PlatformInfoDxeDriver"
+  }
+
+  FILE DRIVER = 7942a7eb-b7d5-4e2e-b908-831e4de55b58 {
+    SECTION DXE_DEPEX = NX627J/Binaries/GlinkDxe/GlinkDxe.depex
+    SECTION PE32 = NX627J/Binaries/GlinkDxe/GlinkDxe.efi
+    SECTION UI = "GlinkDxe"
+  }
+
+  FILE DRIVER = e43128a8-8692-42b6-8afa-676158578d18 {
+    SECTION DXE_DEPEX = NX627J/Binaries/ULogDxe/ULogDxe.depex
+    SECTION PE32 = NX627J/Binaries/ULogDxe/ULogDxe.efi
+    SECTION UI = "ULogDxe"
+  }
+
+  FILE DRIVER = cb29f4d1-7f37-4692-a416-93e82e219711 {
+    SECTION DXE_DEPEX = NX627J/Binaries/NpaDxe/NpaDxe.depex
+    SECTION PE32 = NX627J/Binaries/NpaDxe/NpaDxe.efi
+    SECTION UI = "NpaDxe"
+  }
+
+#  FILE DRIVER = 4db5dea6-5302-4d1a-8a82-677a683b0d29 {
+#    SECTION DXE_DEPEX = NX627J/Binaries/ClockDxe/ClockDxe.depex
+#    SECTION PE32 = NX627J/Binaries/ClockDxe/ClockDxe.efi
+#    SECTION UI = "ClockDxe"
+#  }
+  
+  INF MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.inf
+  INF MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf
+
+  FILE DRIVER = f10f76db-42c1-533f-34a8-69be24653110 {
+    SECTION DXE_DEPEX = NX627J/Binaries/SdccDxe/SdccDxe.depex
+    SECTION PE32 = NX627J/Binaries/SdccDxe/SdccDxe.efi
+    SECTION UI = "SdccDxe"
   }
 
   FILE DRIVER = 0d35cd8e-97ea-4f9a-96af-0f0d89f76567 {
@@ -233,10 +496,27 @@ READ_LOCK_STATUS   = TRUE
     SECTION UI = "UFSDxe"
   }
 
-  FILE DRIVER = 2a7b4bef-80cd-49e1-b473-374ba4d673fc {
-    SECTION DXE_DEPEX = NX627J/Binaries/SPMI/SPMI.depex
-    SECTION PE32 = NX627J/Binaries/SPMI/SPMI.efi
-    SECTION UI = "SPMI"
+  INF FatPkg/EnhancedFatDxe/Fat.inf
+  INF MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
+
+  INF MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf
+
+  FILE DRIVER = b003d837-44cc-b38b-7811-deb5ebbd74d8 {
+    SECTION DXE_DEPEX = NX627J/Binaries/QdssDxe/QdssDxe.depex
+    SECTION PE32 = NX627J/Binaries/QdssDxe/QdssDxe.efi
+    SECTION UI = "QdssDxe"
+  }
+
+  FILE DRIVER = 02b01ad5-7e59-43e8-a6d8-238180613a5a {
+    SECTION DXE_DEPEX = NX627J/Binaries/EmuVariableRuntimeDxe/EmuVariableRuntimeDxe.depex
+    SECTION PE32 = NX627J/Binaries/EmuVariableRuntimeDxe/EmuVariableRuntimeDxe.efi
+    SECTION UI = "EmuVariableRuntimeDxe"
+  }
+
+  FILE DRIVER = 8681cc5a-0df6-441e-b4b8-e915c538f067 {
+    SECTION DXE_DEPEX = NX627J/Binaries/DALTLMM/DALTLMM.depex
+    SECTION PE32 = NX627J/Binaries/DALTLMM/DALTLMM.efi
+    SECTION UI = "DALTLMM"
   }
 
   FILE DRIVER = 04de8591-d2b3-4077-bbbe-b12070094eb6 {
@@ -245,20 +525,38 @@ READ_LOCK_STATUS   = TRUE
     SECTION UI = "I2C"
   }
 
-  FILE DRIVER = 3299a266-15f0-4346-8318-716336736d3e {
-    SECTION DXE_DEPEX = NX627J/Binaries/UsbDeviceDxe/UsbDeviceDxe.depex
-    SECTION PE32 = NX627J/Binaries/UsbDeviceDxe/UsbDeviceDxe.efi
-    SECTION UI = "UsbDeviceDxe"
+  FILE DRIVER = 2a7b4bef-80cd-49e1-b473-374ba4d673fc {
+    SECTION DXE_DEPEX = NX627J/Binaries/SPMI/SPMI.depex
+    SECTION PE32 = NX627J/Binaries/SPMI/SPMI.efi
+    SECTION UI = "SPMI"
   }
 
-  FILE DRIVER = 5af77f10-90df-4e7e-8325-a17ec09d5443 {
-    SECTION DXE_DEPEX = NX627J/Binaries/UsbMsdDxe/UsbMsdDxe.depex
-    SECTION PE32 = NX627J/Binaries/UsbMsdDxe/UsbMsdDxe.efi
-    SECTION UI = "UsbMsdDxe"
+  FILE DRIVER = 7a32bd23-f735-4f57-aa1a-447d2fe3be0d {
+    SECTION DXE_DEPEX = NX627J/Binaries/SPI/SPI.depex
+    SECTION PE32 = NX627J/Binaries/SPI/SPI.efi
+    SECTION UI = "SPI"
+  }
+
+  FILE DRIVER = 5776232e-082d-4b75-9a0e-fe1d13f7a5d9 {
+    SECTION DXE_DEPEX = NX627J/Binaries/PmicDxe/PmicDxe.depex
+    SECTION PE32 = NX627J/Binaries/PmicDxe/PmicDxe.efi
+    SECTION UI = "PmicDxe"
+  }
+
+  FILE DRIVER = 5a5cb8ca-9382-4e0c-b383-77fb517cd9eb {
+    SECTION DXE_DEPEX = NX627J/Binaries/AdcDxe/AdcDxe.depex
+    SECTION PE32 = NX627J/Binaries/AdcDxe/AdcDxe.efi
+    SECTION UI = "AdcDxe"
   }
   FILE DRIVER = 5bd181db-0487-4f1a-ae73-820e165611b3 {
+    SECTION DXE_DEPEX = NX627J/Binaries/ButtonsDxe/ButtonsDxe.depex
     SECTION PE32 = NX627J/Binaries/ButtonsDxe/ButtonsDxe.efi
     SECTION UI = "ButtonsDxe"
+  }
+
+  FILE DRIVER = 3adf8dda-1850-44c5-8c63-bb991849bc6f {
+    SECTION PE32 = NX627J/Binaries/HashDxe/HashDxe.efi
+    SECTION UI = "HashDxe"
   }
 
 [FV.FVMAIN_COMPACT]
