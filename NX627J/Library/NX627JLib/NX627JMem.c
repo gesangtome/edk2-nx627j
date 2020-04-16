@@ -30,7 +30,7 @@ STATIC
 VOID
 AddHob
 (
-	ARM_MEMORY_REGION_DESCRIPTOR_EX Desc
+    ARM_MEMORY_REGION_DESCRIPTOR_EX Desc
 )
 {
 	BuildResourceDescriptorHob(
@@ -49,48 +49,49 @@ AddHob
 
 VOID
 ArmPlatformGetVirtualMemoryMap (
-	IN ARM_MEMORY_REGION_DESCRIPTOR** VirtualMemoryMap
+  IN ARM_MEMORY_REGION_DESCRIPTOR** VirtualMemoryMap
   )
 {
-	//TO-DO:ADD MEMORY MAP HERE
-	ARM_MEMORY_REGION_DESCRIPTOR* MemoryDescriptor;
-	UINTN Index = 0;
+  //TO-DO:ADD MEMORY MAP HERE
+    ARM_MEMORY_REGION_DESCRIPTOR* MemoryDescriptor;
+    UINTN Index = 0;
 
-	MemoryDescriptor = (ARM_MEMORY_REGION_DESCRIPTOR*)AllocatePages
-		(EFI_SIZE_TO_PAGES (sizeof (ARM_MEMORY_REGION_DESCRIPTOR) *MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT));
+    MemoryDescriptor = (ARM_MEMORY_REGION_DESCRIPTOR*)AllocatePages
+                       (EFI_SIZE_TO_PAGES (sizeof (ARM_MEMORY_REGION_DESCRIPTOR) *
+                       MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT));
 
-	// Run through each memory descriptor
-	while (gDeviceMemoryDescriptorEx[Index].Address != (EFI_PHYSICAL_ADDRESS)0xFFFFFFFF)
-	{
-		switch (gDeviceMemoryDescriptorEx[Index].HobOption)
-		{
-			case AddMem:
+    // Run through each memory descriptor
+    while (gDeviceMemoryDescriptorEx[Index].Address != (EFI_PHYSICAL_ADDRESS)0xFFFFFFFF)
+    {
+        switch (gDeviceMemoryDescriptorEx[Index].HobOption)
+        {
+            case AddMem:
 			case AddDev:
-				AddHob(gDeviceMemoryDescriptorEx[Index]);
-				break;
-			case NoHob:
-		default:
-			goto update;
-		}
+                AddHob(gDeviceMemoryDescriptorEx[Index]);
+                break;
+            case NoHob:
+            default:
+                goto update;
+        }
 
-		update:
-			ASSERT(Index < MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
+    update:
+        ASSERT(Index < MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
 
-			MemoryDescriptor[Index].PhysicalBase = gDeviceMemoryDescriptorEx[Index].Address;
-			MemoryDescriptor[Index].VirtualBase = gDeviceMemoryDescriptorEx[Index].Address;
-			MemoryDescriptor[Index].Length = gDeviceMemoryDescriptorEx[Index].Length;
-			MemoryDescriptor[Index].Attributes = gDeviceMemoryDescriptorEx[Index].ArmAttributes;
+        MemoryDescriptor[Index].PhysicalBase = gDeviceMemoryDescriptorEx[Index].Address;
+        MemoryDescriptor[Index].VirtualBase = gDeviceMemoryDescriptorEx[Index].Address;
+        MemoryDescriptor[Index].Length = gDeviceMemoryDescriptorEx[Index].Length;
+	MemoryDescriptor[Index].Attributes = gDeviceMemoryDescriptorEx[Index].ArmAttributes;
 
-			Index++;
-	}
+        Index++;
+    }
 
-	// Last one (terminator)
-	MemoryDescriptor[Index].PhysicalBase = 0;
-	MemoryDescriptor[Index].VirtualBase = 0;
-	MemoryDescriptor[Index].Length = 0;
-	MemoryDescriptor[Index++].Attributes = (ARM_MEMORY_REGION_ATTRIBUTES)0;
-	ASSERT(Index <= MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
-
-	*VirtualMemoryMap = &MemoryDescriptor[0];
-	//ASSERT(0);
+    // Last one (terminator)
+    MemoryDescriptor[Index].PhysicalBase = 0;
+    MemoryDescriptor[Index].VirtualBase = 0;
+    MemoryDescriptor[Index].Length = 0;
+    MemoryDescriptor[Index++].Attributes = (ARM_MEMORY_REGION_ATTRIBUTES)0;
+    ASSERT(Index <= MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
+    
+    *VirtualMemoryMap = &MemoryDescriptor[0];
+  //ASSERT(0);
 }

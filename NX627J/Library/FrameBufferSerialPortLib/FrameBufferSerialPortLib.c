@@ -8,7 +8,7 @@
 #include <Resources/font5x12.h>
 #include <Resources/FbColor.h>
 
-#include "FrameBufferSerialPortLib.h"
+#include <Library/FrameBufferSerialPortLib.h>
 
 FBCON_POSITION m_Position;
 FBCON_POSITION m_MaxPosition;

@@ -1,20 +1,16 @@
 /** @file
   Implementation for PlatformBootManagerLib library class interfaces.
-
   Copyright (C) 2015-2016, Red Hat, Inc.
   Copyright (c) 2014, ARM Ltd. All rights reserved.
   Copyright (c) 2004 - 2016, Intel Corporation. All rights reserved.
   Copyright (c) 2016, Linaro Ltd. All rights reserved.
   Copyright (c), 2017, Andrei Warkentin <andrey.warkentin@gmail.com>
-
   This program and the accompanying materials are licensed and made available
   under the terms and conditions of the BSD License which accompanies this
   distribution. The full text of the license may be found at
   http://opensource.org/licenses/bsd-license.php
-
   THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS, WITHOUT
   WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
-
 **/
 
 #include <Library/BootLogoLib.h>
@@ -176,11 +172,9 @@ STATIC PLATFORM_USB_KEYBOARD mUsbKeyboard = {
 
 /**
   Check if the handle satisfies a particular condition.
-
   @param[in] Handle      The handle to check.
   @param[in] ReportText  A caller-allocated string passed in for reporting
                          purposes. It must never be NULL.
-
   @retval TRUE   The condition is satisfied.
   @retval FALSE  Otherwise. This includes the case when the condition could not
                  be fully evaluated due to an error.
@@ -195,7 +189,6 @@ BOOLEAN
 
 /**
   Process a handle.
-
   @param[in] Handle      The handle to process.
   @param[in] ReportText  A caller-allocated string passed in for reporting
                          purposes. It must never be NULL.
@@ -211,12 +204,9 @@ VOID
   Locate all handles that carry the specified protocol, filter them with a
   callback function, and pass each handle that passes the filter to another
   callback.
-
   @param[in] ProtocolGuid  The protocol to look for.
-
   @param[in] Filter        The filter function to pass each handle to. If this
                            parameter is NULL, then all handles are processed.
-
   @param[in] Process       The callback function to pass each handle to that
                            clears the filter.
 **/
@@ -598,7 +588,6 @@ PlatformBootManagerAfterConsole (
 /**
   This function is called each second during the boot manager waits the
   timeout.
-
   @param TimeoutRemain  The remaining timeout.
 **/
 VOID
@@ -634,7 +623,6 @@ PlatformBootManagerWaitCallback (
   The function is called when no boot option could be launched,
   including platform recovery options and options pointing to applications
   built into firmware volumes.
-
   If this function returns, BDS attempts to enter an infinite loop.
 **/
 VOID
@@ -689,3 +677,4 @@ PlatformBootManagerUnableToBoot (
     EfiBootManagerBoot (&BootManagerMenu);
   }
 }
+
