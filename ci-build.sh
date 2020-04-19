@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-sudo apt update
 sudo apt install build-essential uuid-dev iasl git nasm python3-distutils gcc-aarch64-linux-gnu
 curdir="$PWD"
 cd ..
