@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-sudo apt update
 sudo apt install -y build-essential uuid-dev iasl git nasm gcc-aarch64-linux-gnu
 curdir="$PWD"
 cd ..
