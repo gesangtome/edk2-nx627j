@@ -1,1 +1,6 @@
-workspace
+output/*.img
+output/Build
+output/*.dtb
+*.patch
+*.*~
+*.rej
