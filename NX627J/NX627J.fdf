@@ -230,7 +230,24 @@ READ_LOCK_STATUS   = TRUE
   INF MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf
   INF MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf
   INF MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf
-  INF RuleOverride = ACPITABLE NX627J/AcpiTables/AcpiTables.inf
+
+  FILE FREEFORM = 7E374E25-8E01-4FEE-87F2-390C23C606CD {
+	SECTION RAW = NX627J/AcpiTables/apic.aml
+	SECTION RAW = NX627J/AcpiTables/bgrt.aml
+	SECTION RAW = NX627J/AcpiTables/csrt.aml
+	SECTION RAW = NX627J/AcpiTables/dbg2.aml
+	SECTION RAW = NX627J/AcpiTables/dsdt.aml
+	SECTION RAW = NX627J/AcpiTables/facp.aml
+	SECTION RAW = NX627J/AcpiTables/fpdt.aml
+	SECTION RAW = NX627J/AcpiTables/gtdt.aml
+	SECTION RAW = NX627J/AcpiTables/iort.aml
+	SECTION RAW = NX627J/AcpiTables/mcfg.aml
+	SECTION RAW = NX627J/AcpiTables/msdm.aml
+	SECTION RAW = NX627J/AcpiTables/pptt.aml
+	SECTION RAW = NX627J/AcpiTables/tpm2.aml
+	SECTION RAW = NX627J/AcpiTables/xsdt.aml
+	SECTION UI = "AcpiTables"
+  }
 
   #
   # SMBIOS Support
