@@ -1,6 +1,7 @@
 output/*.img
 output/Build
 output/*.dtb
+output/HOSTDTC
 *.patch
 *.*~
 *.rej
