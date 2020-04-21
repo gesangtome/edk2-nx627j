@@ -38,7 +38,7 @@ makedtc() {
 
 makedtb() {
   for DTS in *.dts; do
-    $HOSTDTC -I dts -O dtb -o $WORKSPACE/$DTS.dtb $DTS
+    $HOSTDTC -I dts -O dtb -o $WORKSPACE/$DTS.dtb $DTS --quiet
   done
 }
 
