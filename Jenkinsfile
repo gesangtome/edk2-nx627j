@@ -31,6 +31,11 @@ pipeline {
                 sh label: 'appenddtb', script: '$WORKSPACE/build.sh appenddtb'
             }
         }
+        stage ('make uefi image') {
+            steps {
+                sh label: 'makeuefi', script: '$WORKSPACE/build.sh androidboot'
+            }
+        }
         stage('Clean') {
             steps {
                 sh label: 'Clean workspace', script: '$WORKSPACE/build.sh clean'
