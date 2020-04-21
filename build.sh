@@ -1,14 +1,18 @@
 #!/bin/bash
+# Created by 弱弱的胖橘猫丷 <gesangtome@foxmail.com>
+# Latest update at Wed Apr 22 04:57:04 CST 2020
 
 Identity() {
 case $MACHINE in
     JENKINS)
         EDK2="edk2-porting_edk2_master"
         EDK2_PLATFORMS="edk2-porting_platforms_master"
+          IS_AUTORUN=no
     ;;
     *)
         EDK2="edk2"
         EDK2_PLATFORMS="edk2-platforms"
+          IS_AUTORUN=yes
     ;;
 esac
 }
@@ -59,4 +63,36 @@ androidboot() {
 clean() {
   make -C $WORKSPACE clean
 }
-  Identity && initialization && $1
+
+ make_all() {
+  while [ $# != 0 ];
+    do
+      local EXECUTE_COMMAND=$1
+      printf "Start the task: $EXECUTE_COMMAND\n"
+      $EXECUTE_COMMAND
+        case $? in
+          0)
+            printf "Successful task '$EXECUTE_COMMAND' execution!\n"
+            ;;
+          1)
+            printf "Task '$EXECUTE_COMMAND' execution failed!\n"
+            exit 1
+            ;;
+        esac
+    shift;
+  done
+}
+
+  Identity
+
+  case $IS_AUTORUN in
+    yes)
+        initialization
+        make_all makedtc makedtb make_uefi_image make_fake_kernel appenddtb androidboot clean
+        ;;
+    no)
+        initialization
+        $1
+        ;;
+  esac
+
