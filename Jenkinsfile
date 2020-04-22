@@ -2,43 +2,48 @@ pipeline {
     agent any
 
     stages {
-        stage('Prebuilt') {
+        stage('Pre-built') {
             parallel{
                 stage('Build dtc') { 
                     steps {
                         sh label: 'make dtc', script: '$WORKSPACE/build.sh makedtc'
                     }
                 }
-                stage('Build dtb') { 
+                stage('Make dtb') { 
                     steps {
                         sh label: 'make dtb', script: '$WORKSPACE/build.sh makedtb'
                     }
                 }
             }
         }
-        stage ('Build uefi fd') {
+        stage ('Build bios') {
             steps {
-                sh label: 'uefi', script: '$WORKSPACE/build.sh make_uefi_image'
+                sh label: 'makebios', script: '$WORKSPACE/build.sh make_uefi_image'
             }
         }
-        stage ('Build fake kernel') {
+        stage ('Build kernel') {
             steps {
                 sh label: 'fakekernel', script: '$WORKSPACE/build.sh make_fake_kernel'
             }
         }
-        stage ('Append kernel DTB') {
+        stage ('Append DTB') {
             steps {
                 sh label: 'appenddtb', script: '$WORKSPACE/build.sh appenddtb'
             }
         }
-        stage ('make uefi image') {
+        stage ('Make image') {
             steps {
                 sh label: 'makeuefi', script: '$WORKSPACE/build.sh androidboot'
             }
         }
-        stage('Clean') {
+        stage('Save image') {
             steps {
-                sh label: 'Clean workspace', script: '$WORKSPACE/build.sh clean'
+                archiveArtifacts 'nubia-Z20_edk2-uefiboot.img'
+            }
+        }
+        stage('Cleaning') {
+            steps {
+                sh label: 'Cleaning workspace', script: '$WORKSPACE/build.sh clean'
             }
         }
     }
