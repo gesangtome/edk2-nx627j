@@ -21,8 +21,6 @@ esac
 initialization() {
   export PACKAGES_PATH=$PWD/../$EDK2:$PWD/../$EDK2_PLATFORMS:$PWD
   export WORKSPACE=$PWD/output
-  export DTC=$PWD/sources/dtc/dtc
-  export HOSTDTC=$WORKSPACE/HOSTDTC
   export UEFIFD=$WORKSPACE/Build/NX627J/DEBUG_GCC5/FV/NX627J_UEFI.fd
   export KERNEL_IMAGES=$WORKSPACE/nubia_Z20-pkg-aarch64.img
   export RAMDISK=$WORKSPACE/../androidboot/ramdisk
@@ -33,12 +31,11 @@ initialization() {
 
 makedtc() {
   make -C sources/dtc
-  ln -sf $DTC $HOSTDTC
 }
 
 makedtb() {
   for DTS in *.dts; do
-    $HOSTDTC -I dts -O dtb -o $WORKSPACE/$DTS.dtb $DTS --quiet
+    $PWD/sources/dtc/dtc -I dts -O dtb -o $WORKSPACE/$DTS.dtb $DTS --quiet
   done
 }
 
@@ -62,6 +59,8 @@ androidboot() {
 
 clean() {
   make -C $WORKSPACE clean
+  make -C $PWD/sources/dtc clean
+  if [ "$IS_AUTORUN" == "no" ]; then make clean; fi
 }
 
  make_all() {
