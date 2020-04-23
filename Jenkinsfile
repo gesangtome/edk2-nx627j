@@ -2,18 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Pre-built') {
-            parallel{
-                stage('Build dtc') { 
-                    steps {
-                        sh label: 'make dtc', script: '$WORKSPACE/build.sh makedtc'
-                    }
-                }
-                stage('Make dtb') { 
-                    steps {
-                        sh label: 'make dtb', script: '$WORKSPACE/build.sh makedtb'
-                    }
-                }
+        stage('Build dtc') { 
+            steps {
+                sh label: 'make dtc', script: '$WORKSPACE/build.sh makedtc'
+            }
+        }
+        stage('Make dtb') { 
+            steps {
+                sh label: 'make dtb', script: '$WORKSPACE/build.sh makedtb'
             }
         }
         stage ('Build bios') {
