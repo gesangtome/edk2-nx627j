@@ -19,7 +19,7 @@ initialization() {
   export WORKSPACE=$PWD/output
   export DTC=$PWD/sources/dtc/dtc
   export HOSTDTC=$WORKSPACE/HOSTDTC
-  export UEFIFD=$WORKSPACE/Build/nubiaZ20/DEBUG_GCC5/FV/NUBIAPKG_UEFI.fd
+  export UEFIFD=$WORKSPACE/Build/NX627J/DEBUG_GCC5/FV/NX627J_UEFI.fd
   . ../$EDK2/edksetup.sh
 }
 
@@ -35,16 +35,16 @@ makedtb() {
 }
 
 make_uefi_image() {
-  GCC5_AARCH64_PREFIX=aarch64-linux-gnu- build -s -n 0 -a AARCH64 -t GCC5 -p Pixel3XL/Pixel3XL.dsc
+  GCC5_AARCH64_PREFIX=aarch64-linux-gnu- build -s -n 0 -a AARCH64 -t GCC5 -p NX627J/NX627J.dsc
 }
 
 make_fake_kernel() {
-  gzip -c < $UEFIFD > $WORKSPACE/nubiaZ20pkg-arm64.img
+  gzip -c < $UEFIFD > $WORKSPACE/nubia-NX627J-aarch64.img
 }
 
 appenddtb() {
   for DTB in $WORKSPACE/*.dtb; do
-    cat $DTB >> $WORKSPACE/nubiaZ20pkg-arm64.img
+    cat $DTB >> $WORKSPACE/nubia-NX627J-aarch64.img
   done
 }
 

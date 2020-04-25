@@ -34,7 +34,7 @@
 #include <Protocol/LoadedImage.h>
 #include <Protocol/PlatformBootManager.h>
 
-#include "Pixel3XLDxe.h"
+#include "NX627JDxe.h"
 
 EFI_CPU_ARCH_PROTOCOL     *gCpu;
 
@@ -80,7 +80,7 @@ OnEndOfDxe (
 
 EFI_STATUS
 EFIAPI
-Pixel3XLEntryPoint (
+NX627J_EntryPoint (
   IN EFI_HANDLE         ImageHandle,
   IN EFI_SYSTEM_TABLE   *SystemTable
   )

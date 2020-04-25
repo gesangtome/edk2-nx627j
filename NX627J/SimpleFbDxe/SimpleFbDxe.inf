@@ -16,7 +16,7 @@
   MdeModulePkg/MdeModulePkg.dec
   EmbeddedPkg/EmbeddedPkg.dec
   ArmPkg/ArmPkg.dec
-  Pixel3XL/Pixel3XL.dec
+  NX627J/NX627J.dec
 
 [LibraryClasses]
   BaseLib
@@ -35,9 +35,9 @@
   gEfiCpuArchProtocolGuid
 
 [FixedPcd]
-  gPixel3XLTokenSpaceGuid.PcdMipiFrameBufferAddress
-  gPixel3XLTokenSpaceGuid.PcdMipiFrameBufferWidth
-  gPixel3XLTokenSpaceGuid.PcdMipiFrameBufferHeight
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferAddress
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferWidth
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferHeight
 
 [Guids]
   gEfiMdeModulePkgTokenSpaceGuid
