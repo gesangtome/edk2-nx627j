@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Save image') {
             steps {
-                archiveArtifacts 'nubia-Z20_edk2-uefiboot.img'
+                archiveArtifacts artifacts: 'nubia-Z20_edk2-uefiboot.img', fingerprint: true
             }
         }
         stage('Cleaning') {
