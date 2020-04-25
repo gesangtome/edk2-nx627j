@@ -1,0 +1,4 @@
+[submodule "xbl_efi_drivers"]
+	path = NX627J/Binaries
+	url = git@github.com:edk2-porting/xbl_efi_drivers.git
+	branch = nx627j
