@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION    = 0x00010005
+  BASE_NAME      = FrameBufferSerialPortLib
+  MODULE_TYPE    = BASE
+  VERSION_STRING = 1.0
+  LIBRARY_CLASS  = SerialPortLib
+
+[Sources.common]
+  FrameBufferSerialPortLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ArmPkg/ArmPkg.dec
+  NX627J/NX627J.dec
+
+[LibraryClasses]
+  ArmLib
+  PcdLib
+  IoLib
+  HobLib
+  CompilerIntrinsicsLib
+  CacheMaintenanceLib
+
+[Pcd]
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferAddress
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferWidth
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferHeight
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferPixelBpp
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth
+  gNX627JTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight

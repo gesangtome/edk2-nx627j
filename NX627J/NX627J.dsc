@@ -67,7 +67,8 @@
   FrameBufferBltLib|MdeModulePkg/Library/FrameBufferBltLib/FrameBufferBltLib.inf
 
   SerialPortLib|NX627J/Library/FrameBufferSerialPortLib/FrameBufferSerialPortLib.inf
-  PlatformBootManagerLib|XiaomiMI6Pkg/Library/PlatformBootManagerLib/PlatformBootManagerLib.inf
+  CompilerIntrinsicsLib|ArmPkg/Library/CompilerIntrinsicsLib/CompilerIntrinsicsLib.inf
+  PlatformBootManagerLib|NX627J/Library/PlatformBootManagerLib/PlatformBootManagerLib.inf
 
 [LibraryClasses.common.SEC]
   PrePiLib|EmbeddedPkg/Library/PrePiLib/PrePiLib.inf
