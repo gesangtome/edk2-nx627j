@@ -122,6 +122,24 @@ READ_LOCK_STATUS   = TRUE
   INF EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf
   INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
 
+  FILE DRIVER = af9763a2-033b-4109-8e17-56a98d380c92 {
+    SECTION DXE_DEPEX = Dxe/HWIODxeDriver/HWIODxeDriver.depex
+    SECTION PE32 = Dxe/HWIODxeDriver/HWIODxeDriver.efi
+    SECTION UI = "HWIODxeDriver"
+  }
+
+  FILE DRIVER = 5776232e-082d-4b75-9a0e-fe1d13f7a5d9 {
+    SECTION DXE_DEPEX = Dxe/PmicDxe/PmicDxe.depex
+    SECTION PE32 = Dxe/PmicDxe/PmicDxe.efi
+    SECTION UI = "PmicDxe"
+  }
+
+  FILE DRIVER = 5bd181db-0487-4f1a-ae73-820e165611b3 {
+    SECTION DXE_DEPEX = Dxe/ButtonsDxe/ButtonsDxe.depex
+    SECTION PE32 = Dxe/ButtonsDxe/ButtonsDxe.efi
+    SECTION UI = "ButtonsDxe"
+  }
+
   #
   # Multiple Console IO support
   #
@@ -150,6 +168,29 @@ READ_LOCK_STATUS   = TRUE
   INF NX627J/Drivers/NX627JDxe/NX627JDxe.inf
   INF NX627J/Drivers/SimpleFbDxe/SimpleFbDxe.inf
 
+  FILE DRIVER = 0d35cd8e-97ea-4f9a-96af-0f0d89f76567 {
+    SECTION DXE_DEPEX = Dxe/UFSDxe/UFSDxe.depex
+    SECTION PE32 = Dxe/UFSDxe/UFSDxe.efi
+    SECTION UI = "UFSDxe"
+  }
+
+  FILE DRIVER = 2a7b4bef-80cd-49e1-b473-374ba4d673fc {
+    SECTION DXE_DEPEX = Dxe/SPMI/SPMI.depex
+    SECTION PE32 = Dxe/SPMI/SPMI.efi
+    SECTION UI = "SPMI"
+  }
+
+  FILE DRIVER = f541d663-4a48-40aa-aabf-ff158ccae34c {
+    SECTION DXE_DEPEX = Dxe/SmemDxe/SmemDxe.depex
+    SECTION PE32 = Dxe/SmemDxe/SmemDxe.efi
+    SECTION UI = "SmemDxe"
+  }
+
+  FILE DRIVER = 10e193df-9966-44e7-b17c-59dd831e20fc {
+    SECTION DXE_DEPEX = Dxe/ChipInfo/ChipInfo.depex
+    SECTION PE32 = Dxe/ChipInfo/ChipInfo.efi
+    SECTION UI = "ChipInfo"
+  }
 
   #
   # USB Host Support
