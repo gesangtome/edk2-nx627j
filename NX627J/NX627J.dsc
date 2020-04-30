@@ -93,7 +93,7 @@
 [PcdsFixedAtBuild.common]
   gEfiMdePkgTokenSpaceGuid.PcdDefaultTerminalType|4
 
-  gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVersionString|L"Alpha"
+  gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVersionString|L"gesangtome-release-master"
 
   # System Memory (6GB)
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x80000000
