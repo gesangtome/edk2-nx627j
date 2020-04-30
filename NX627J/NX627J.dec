@@ -42,3 +42,6 @@
   gNX627JTokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32|UINT32|0x0000a403
   gNX627JTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth|1080|UINT32|0x0000a404
   gNX627JTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight|1920|UINT32|0x0000a405
+
+  # VirtualRealTimeClockLib
+  gNX627JTokenSpaceGuid.PcdBootShimInfo1|0xb0000000|UINT64|0x00000a601
