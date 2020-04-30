@@ -1,38 +1,44 @@
-Attempt to create a minimal EDK2 for Pixel 3 XL.
+Attempt to create a minimal EDK2 for nubia NX627J
+
+## Build status
+[![Build Status](http://flowertome.ticp.io/jenkins/job/edk2-porting/job/edk2-nx627j/job/master/badge/icon)](http://flowertome.ticp.io/jenkins/job/edk2-porting/job/edk2-nx627j/job/master/)
+
 
 ## Status
+Currently able to enter the EDK2 UEFI SHELL interface.
 
-Can partially boot the Fedora 29 aarch64 kernel: there's no initrd, so the kernel panics when mounting root FS.
-
-Since there's no internal storage support yet, use the addlinux branch to embed a Linux kernel in the UEFI firmware.
 
 ## Building
-Tested on Ubuntu 18.04.
+Tested on `Fedora Workstation`
 
 First, clone EDK2.
 
 ```
 cd ..
-git clone https://github.com/tianocore/edk2.git --recursive
-git clone https://github.com/tianocore/edk2-platforms.git
+git clone https://github.com/edk2-porting/edk2.git --recursive
+git clone https://github.com/edk2-porting/edk2-platforms.git
 ```
 
 You should have all three directories side by side.
 
 Next, install dependencies:
 
-18.04:
+Fedora:
 
 ```
-sudo apt install build-essential uuid-dev iasl git nasm python3-distutils gcc-aarch64-linux-gnu abootimg
+sudo dnf install  libuuid-devel iasl git nasm gcc-aarch64-linux-gnu abootimg
 ```
 
 Also see [EDK2 website](https://github.com/tianocore/tianocore.github.io/wiki/Using-EDK-II-with-Native-GCC#Install_required_software_from_apt)
 
 Finally, ./build.sh.
 
-Then fastboot boot uefi.img.
+Then fastboot flash boot `${UEFI IMAGE NAME}`. `(Please backup the boot partition first)`
 
-# Credits
 
+## Credits
 SimpleFbDxe screen driver is from imbushuo's [Lumia950XLPkg](https://github.com/WOA-Project/Lumia950XLPkg).
+
+Referenced some code and commits from fxsheep's [XiaomiMI6Pkg](https://github.com/fxsheep/edk2-sagit).
+
+Referenced some code and commits from NekokeCore's [XiaomiMI8Pkg](https://github.com/NekokeCore/edk2-dipper).
