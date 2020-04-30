@@ -389,8 +389,8 @@ STATIC CONST ARM_TYPE7 mArmDefaultType7_a57_l1i = {
     },
     1,
     0x380, //L1 enabled, unknown WB
-    48, //48k i cache max
-    48, //48k installed
+    64, //48k i cache max
+    64, //48k installed
     {0,1}, //SRAM type
     {0,1}, //SRAM type
     0, //unkown speed
