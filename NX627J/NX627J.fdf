@@ -147,8 +147,8 @@ READ_LOCK_STATUS   = TRUE
   #
   INF EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf
 
-  INF NX627J/NX627JDxe/NX627JDxe.inf
-  INF NX627J/SimpleFbDxe/SimpleFbDxe.inf
+  INF NX627J/Drivers/NX627JDxe/NX627JDxe.inf
+  INF NX627J/Drivers/SimpleFbDxe/SimpleFbDxe.inf
 
 
   #

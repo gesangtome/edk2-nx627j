@@ -199,8 +199,8 @@
   #
   EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf
 
-  NX627J/NX627JDxe/NX627JDxe.inf
-  NX627J/SimpleFbDxe/SimpleFbDxe.inf
+  NX627J/Drivers/NX627JDxe/NX627JDxe.inf
+  NX627J/Drivers/SimpleFbDxe/SimpleFbDxe.inf
 
   #
   # USB Host Support
