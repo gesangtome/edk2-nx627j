@@ -34,7 +34,7 @@
 
   CapsuleLib|MdeModulePkg/Library/DxeCapsuleLibNull/DxeCapsuleLibNull.inf
   UefiBootManagerLib|MdeModulePkg/Library/UefiBootManagerLib/UefiBootManagerLib.inf
-  PlatformBootManagerLib|ArmPkg/Library/PlatformBootManagerLib/PlatformBootManagerLib.inf
+  PlatformBootManagerLib|NX627J/Library/PlatformBootManagerLib/PlatformBootManagerLib.inf
   CustomizedDisplayLib|MdeModulePkg/Library/CustomizedDisplayLib/CustomizedDisplayLib.inf
 
   # UiApp dependencies
@@ -68,7 +68,6 @@
 
   SerialPortLib|NX627J/Library/FrameBufferSerialPortLib/FrameBufferSerialPortLib.inf
   CompilerIntrinsicsLib|ArmPkg/Library/CompilerIntrinsicsLib/CompilerIntrinsicsLib.inf
-  PlatformBootManagerLib|NX627J/Library/PlatformBootManagerLib/PlatformBootManagerLib.inf
 
 [LibraryClasses.common.SEC]
   PrePiLib|EmbeddedPkg/Library/PrePiLib/PrePiLib.inf
