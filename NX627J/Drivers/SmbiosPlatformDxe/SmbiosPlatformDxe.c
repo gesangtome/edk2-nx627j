@@ -292,8 +292,8 @@ STATIC CONST ARM_TYPE4 mArmDefaultType4_a72 = {
     5, //version
     {0,0,0,0,0,1}, //voltage
     0, //external clock
-    1200, //max speed
-    1200, //current speed
+    2800, //max speed
+    2800, //current speed
     0x41, //status
     ProcessorUpgradeOther,
     SMBIOS_HANDLE_A57_L1I, //l1 cache handle
@@ -326,8 +326,8 @@ STATIC CONST ARM_TYPE4 mArmDefaultType4_a57 = {
     3, //version
     {0,0,0,0,0,1}, //voltage
     0, //external clock
-    1200, //max speed
-    1200, //current speed
+    2430, //max speed
+    2430, //current speed
     0x41, //status
     ProcessorUpgradeOther,
     SMBIOS_HANDLE_A57_L1I, //l1 cache handle
@@ -360,8 +360,8 @@ STATIC CONST ARM_TYPE4 mArmDefaultType4_a53 = {
     4, //version
     {0,0,0,0,0,1}, //voltage
     0, //external clock
-    650, //max speed
-    650, //current speed
+    1790, //max speed
+    1790, //current speed
     0x41, //status
     ProcessorUpgradeOther,
     SMBIOS_HANDLE_A53_L1I, //l1 cache handle
