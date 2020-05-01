@@ -1,11 +1,13 @@
 Attempt to create a minimal EDK2 for nubia NX627J
 
 ## Build status
-[![Build Status](http://flowertome.ticp.io/jenkins/job/edk2-porting/job/edk2-nx627j/job/master/badge/icon)](http://flowertome.ticp.io/jenkins/job/edk2-porting/job/edk2-nx627j/job/master/)
+ROBOT-CI:[![Build Status](http://flowertome.ticp.io/jenkins/buildStatus/icon?job=edk2-nx627j)](http://flowertome.ticp.io/jenkins/job/edk2-nx627j/)
 
 
 ## Status
-Currently able to enter the EDK2 UEFI SHELL interface.
+2020-05-01: Currently able to enter the EDK2 UEFI SHELL interface.
+
+2020-05-01: Using Fedora server aarch64 test, the result is: the terminal prompts `"Exiting tboot service and install virtual address map..." to stop here.`
 
 
 ## Building
