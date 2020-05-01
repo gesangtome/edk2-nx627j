@@ -100,8 +100,8 @@
   gArmTokenSpaceGuid.PcdSystemMemorySize|0x180000000
 
   # We only boot one processor here!
-  gArmPlatformTokenSpaceGuid.PcdCoreCount|1
-  gArmPlatformTokenSpaceGuid.PcdClusterCount|1
+  gArmPlatformTokenSpaceGuid.PcdCoreCount|8
+  gArmPlatformTokenSpaceGuid.PcdClusterCount|3
 
   #
   # ARM PrimeCell
