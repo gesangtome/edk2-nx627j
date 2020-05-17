@@ -1,7 +1,7 @@
 Attempt to create a minimal EDK2 for nubia NX627J
 
 ## Build status
-ROBOT-CI:[![Build Status](http://flowertome.ticp.io/jenkins/buildStatus/icon?job=edk2-nx627j)](http://flowertome.ticp.io/jenkins/job/edk2-nx627j/)
+jenkins:[![Build Status](http://flowertome.ticp.io/jenkins/buildStatus/icon?job=edk2-nx627j%2Fmaster)](http://flowertome.ticp.io/jenkins/job/edk2-nx627j/job/master/)
 
 
 ## Status
