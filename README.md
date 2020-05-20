@@ -9,6 +9,8 @@ jenkins:[![Build Status](http://flowertome.ticp.io/jenkins/buildStatus/icon?job=
 
 2020-05-01: Using Fedora server aarch64 test, the result is: the terminal prompts `"Exiting tboot service and install virtual address map..." to stop here.`
 
+2020-05-20: Now it still doesn't work, stay at printing edk2 firmware version, `Can not get any useful logs buff!`
+
 
 ## Building
 Tested on `Fedora Workstation`
