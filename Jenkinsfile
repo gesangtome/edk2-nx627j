@@ -9,7 +9,7 @@ pipeline
 
     options
     {
-        timeout(activity: true, time: 65)
+        timeout(activity: true, time: 20)
     }
 
     stages
@@ -61,8 +61,11 @@ pipeline
     {
         success
         {
-            archiveArtifacts artifacts: 'nubia-Z20_edk2-uefiboot.img', fingerprint: true, onlyIfSuccessful: true
-            sh label: 'Cleaning workspace', script: '$WORKSPACE/build.sh clean'
+            archiveArtifacts artifacts: 'nubia-Z20_edk2-uefiboot.img', onlyIfSuccessful: true
+        }
+        cleanup
+        {
+            sh label: 'Cleanup workspace', script: '$WORKSPACE/build.sh clean'
         }
     }
 }
