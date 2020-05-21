@@ -11,6 +11,7 @@ jenkins:[![Build Status](http://flowertome.ticp.io/jenkins/buildStatus/icon?job=
 
 2020-05-20: Now it still doesn't work, stay at printing edk2 firmware version, `Can not get any useful logs buff!`
 
+2020-05-21: There is output information, but it is stuck somewhere, I think it is the log printed by ArmMmuLibCore.c, but it is not clear how to fix it.
 
 ## Building
 Tested on `Fedora Workstation`
@@ -46,3 +47,5 @@ SimpleFbDxe screen driver is from imbushuo's [Lumia950XLPkg](https://github.com/
 Referenced some code and commits from fxsheep's [XiaomiMI6Pkg](https://github.com/fxsheep/edk2-sagit).
 
 Referenced some code and commits from NekokeCore's [XiaomiMI8Pkg](https://github.com/NekokeCore/edk2-dipper).
+
+Referenced some code and commits from rupansh's [beryllium](https://github.com/rupansh/edk2-beryllium).
