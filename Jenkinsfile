@@ -61,11 +61,15 @@ pipeline
     {
         success
         {
-            archiveArtifacts artifacts: 'nubia-Z20_edk2-uefiboot.img', onlyIfSuccessful: true
+            archiveArtifacts artifacts: 'nubia-Z20_edk2-uefiboot.img',
+            fingerprint: true,
+            onlyIfSuccessful: true
         }
         cleanup
         {
-            sh label: 'Cleanup workspace', script: '$WORKSPACE/build.sh clean'
+            sh label: 'Cleanup workspace',
+            script: '$WORKSPACE/build.sh clean'
         }
+
     }
 }
